@@ -11,6 +11,7 @@ public class ReadmeWordCount extends BaseSparkDriver {
         String sparkHome = getSparkHome(SPARK_VERSION);
         SparkSession spark = getSparkSession(ReadmeWordCount.class.getName(), false);
 
+        // TODO: This should be a Broadcast variable if not on master="local"
         Set<String> stopWords = new HashSet<>(Arrays.asList(
                 "", "the", "and", "if", "with", "run", "of", "to", "for",
                 "a", "an", "on", "is", "can", "you", "in", "also",
