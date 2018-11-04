@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.avalonconsult.moorej'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+ext {
+    scalaVersion = '2.11'
+    sparkVersion = '2.3.2'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    
+    implementation group: 'org.apache.spark', name: "spark-core_${scalaVersion}", version: sparkVersion
+    implementation group: 'org.apache.spark', name: "spark-sql_${scalaVersion}", version: sparkVersion
+}
